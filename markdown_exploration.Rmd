@@ -1,0 +1,41 @@
+---
+title: "markdown_exploration"
+author: "Joanna Lawler"
+date: Last updated `r format(Sys.time(), "%d %B, %Y")`
+output:
+  html_document:
+    theme: cerulean
+    toc: TRUE
+---
+
+```{r}
+# install.packages('rmarkdown')
+# install.packages('gapminder')
+# install.packages('tibble')
+# install.packages('DT')
+```
+
+```{r}
+library(gapminder)
+library(tibble)
+library(DT)
+```
+
+```{r gapminder view, echo = FALSE}
+gapminder
+```
+mtcars is a dataset describing the features of automobiles from an old magazine. It has 7 variables.
+```{r}
+mtcars
+
+# These are two equivalent ways to pull a variable out of a dataframe
+
+mtcars[["mpg"]]
+mtcars$mpg
+
+mtcars$cyl
+
+mean(mtcars$mpg)
+unique(mtcars$cyl, incomparables = FALSE)
+
+```
