@@ -4,6 +4,7 @@ author: "Joanna Lawler"
 date: Last updated `r format(Sys.time(), "%d %B, %Y")`
 output:
   html_document:
+    keep_md: TRUE
     theme: cerulean
     toc: TRUE
 ---
