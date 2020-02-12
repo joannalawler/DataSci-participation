@@ -1,3 +1,0 @@
-## Homework 2
-
-#### This is my second homework for the Spring 2020 Data Science and Programming: Wrangling, Exploration, and Visualization course taught by Dr. Brenton Wiernik. Instructions for this assignment, which was due on February 10, 2020, can be found [here](https://wiernik-datasci.netlify.com/evaluation/hw02/hw02/). The topics of this homework, dplyr and ggplot2, were explored using the gapminder and ChickWeight datasets.
