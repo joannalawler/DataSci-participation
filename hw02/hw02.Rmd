@@ -30,7 +30,7 @@ gapminder_p1_2 <- gapminder %>%
   filter(year > 1969, year < 1980, country %in% c("Cambodia", "United States", "Vietnam")) %>%
   select(country, gdpPercap)
 
-DT::datatable(gapminder_p1_2)
+print(gapminder_p1_2)
 ```
 
 # 1.3
@@ -45,7 +45,7 @@ gapminder_p1_3 <- gapminder %>%
   tidyr::drop_na() %>%
   filter(lifeExp_change < 0)
 
-DT::datatable(gapminder_p1_3)
+print(gapminder_p1_3)
 ```
 
 # 1.4
@@ -57,7 +57,7 @@ gapminder_p1_4 <- gapminder %>%
   group_by(country) %>%
   filter(gdpPercap == max(gdpPercap))
 
-DT::datatable(gapminder_p1_4)
+print(gapminder_p1_4)
 ```
 
 # 1.5
@@ -88,7 +88,7 @@ gapminder_p2_1 <- gapminder %>%
   group_by(continent) %>%
   summarize(n_obs = n(), n_countries = n_distinct(country))
 
-DT::datatable(gapminder_p2_1)
+print(gapminder_p2_1)
 ```
 
 lifeExp is a quantitative variable that is a measure of life expectancy in years. It ranges from 23.599 years to 82.603 years. The mean life expectancy across all data points is 59.47 years, whereas the median is 60.71. Based on the variable's skewness (-0.25) and kurtosis (1.87) alone, the variable seems to be relatively normally distributed. However, a histogram reveals that its distribution is bimodal.
@@ -105,7 +105,7 @@ gapminder_p2_2 <- gapminder %>%
             min = min(lifeExp),
             max = max(lifeExp))
 
-DT::datatable(gapminder_p2_2)
+print(gapminder_p2_2)
 
 gapminder_p2_3 <- gapminder %>%
   ggplot(aes(lifeExp)) +
@@ -120,7 +120,7 @@ gapminder_p2_4 <- gapminder %>%
             sigma = sd(lifeExp)) %>%
   arrange(med)
 
-DT::datatable(gapminder_p2_4)
+print(gapminder_p2_4)
 
 gapminder_p2_5 <- gapminder %>% 
   group_by(year) %>% 
@@ -129,7 +129,7 @@ gapminder_p2_5 <- gapminder %>%
             sigma = sd(lifeExp)) %>%
   arrange(med)
 
-DT::datatable(gapminder_p2_5)
+print(gapminder_p2_5)
 
 gapminder_p2_6 <- gapminder %>% 
   group_by(country) %>%
@@ -138,7 +138,7 @@ gapminder_p2_6 <- gapminder %>%
             sigma = sd(lifeExp)) %>%
   arrange(med)
 
-DT::datatable(gapminder_p2_6)
+print(gapminder_p2_6)
 
 gapminder_p2_7 <- gapminder %>%
   filter(country %in% c("Rwanda")) %>%
@@ -146,7 +146,7 @@ gapminder_p2_7 <- gapminder %>%
   summarize(mu = mean(lifeExp),
             med = median(lifeExp))
 
-DT::datatable(gapminder_p2_7)
+print(gapminder_p2_7)
 ```
 
 # 3
@@ -185,5 +185,5 @@ chickweight_p3 <- ChickWeight %>%
             med = median(weight),
             sigma = sd(weight))
 
-DT::datatable(chickweight_p3)
+print(chickweight_p3)
 ```
