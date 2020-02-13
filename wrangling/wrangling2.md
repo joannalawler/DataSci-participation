@@ -463,6 +463,113 @@ iris_inches %>%
 Let's head back to the guide at the section on `summarize()`.
 
 
+```r
+gapminder %>% 
+  summarize(mu = mean(lifeExp),
+            sigma = sd(lifeExp))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gapminder %>% 
+  group_by(continent, year)
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gapminder %>% 
+  group_by(smallLifeExp = lifeExp < 60)
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gapminder %>% 
+  group_by(continent, year) %>% 
+  summarize(mu = mean(lifeExp),
+            sigma = sd(lifeExp))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gapminder %>% 
+  group_by(year, continent) %>%    # Different order
+  summarize(mu = mean(lifeExp),
+            sigma = sd(lifeExp))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gapminder %>% 
+  group_by(country) %>% 
+  transmute(n = length(country))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gapminder %>% 
+  group_by(country) %>%    # More simple
+  summarize(n = n())
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gapminder %>% 
+  count(country)   # Most simple
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gap_inc <- gapminder %>% 
+  arrange(year) %>% 
+  group_by(country) %>%
+  mutate(gdpPercap_inc = gdpPercap - lag(gdpPercap))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+print(gap_inc)
+```
+
+```
+## Error in print(gap_inc): object 'gap_inc' not found
+```
+
+```r
+gap_inc %>% 
+  tidyr::drop_na()
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gap_inc' not found
+```
+
 # Exercises for grouped data frames
 
 Let's do some practice with grouping (and ungrouping) and summarizing data frames!
@@ -474,8 +581,18 @@ Let's do some practice with grouping (and ungrouping) and summarizing data frame
 
 ```r
 gapminder %>% 
-  group_by(FILL_THIS_IN) %>% 
-  FILL_THIS_IN(min_life = min(lifeExp))
+  group_by(continent, year) %>% 
+  summarize(min_life = min(lifeExp))
+```
+
+```
+## Error in eval(lhs, parent, parent): object 'gapminder' not found
+```
+
+```r
+gapminder %>% 
+  group_by(continent, year) %>% 
+  summarize(min_life = min(lifeExp))
 ```
 
 ```
@@ -489,7 +606,7 @@ in the `psych::bfi` dataset. Be sure to handle `NA`!
 
 ```r
 psych::bfi %>%
-  as_tibble() %>% 
+  as_tibble() %>%    #Trying to set rownames = "id" does not work
   select(A1:A5) %>% 
   rowwise() %>% 
   mutate(A_mean = mean(c(A1, A2, A3, A4, A5), na.rm = TRUE)) %>% 
@@ -517,6 +634,33 @@ Now compute mean scores for Conscientiousness, as well as `sd` and `min` scores
 for reach person.
 
 
+```r
+psych::bfi %>%
+  as_tibble() %>% 
+  select(C1:C5) %>% 
+  rowwise() %>% 
+  mutate(C_mean = mean(c(C1, C2, C3, C4, C5), na.rm = TRUE),
+         C_sd = sd(c(C1, C2, C3, C4, C5), na.rm = TRUE),
+         C_min = min(c(C1, C2, C3, C4, C5), na.rm = TRUE)) %>%
+  ungroup()
+```
+
+```
+## # A tibble: 2,800 x 8
+##       C1    C2    C3    C4    C5 C_mean  C_sd C_min
+##    <int> <int> <int> <int> <int>  <dbl> <dbl> <int>
+##  1     2     3     3     4     4    3.2 0.837     2
+##  2     5     4     4     3     4    4   0.707     3
+##  3     4     5     4     2     5    4   1.22      2
+##  4     4     4     3     5     5    4.2 0.837     3
+##  5     4     4     5     3     2    3.6 1.14      2
+##  6     6     6     6     1     3    4.4 2.30      1
+##  7     5     4     4     2     3    3.6 1.14      2
+##  8     3     2     4     2     4    3   1         2
+##  9     6     6     3     4     5    4.8 1.30      3
+## 10     6     5     6     2     1    4   2.35      1
+## # ... with 2,790 more rows
+```
 
 Some functions are **vectorized**, so you don't need `rowwise()`. 
 For example, `pmin()` computes the "parallel min" across the vectors it receives:
@@ -601,13 +745,37 @@ psych::bfi %>%
    
 
 ```r
-FILL_THIS_IN <-
-  psych::bfi %>% 
-  FILL_THIS_IN(FILL_THIS_IN)
+bfi_new <- psych::bfi %>% 
+  mutate(education = factor(education)) %>%
+  select(education, A1:A5, C1:C5, E1:E5, N1:N5, O1:O5) %>%
+  rowwise() %>% 
+  mutate(A = mean(c(A1, A2, A3, A4, A5), na.rm = TRUE),
+         C = mean(c(C1, C2, C3, C4, C5), na.rm = TRUE),
+         E = mean(c(E1, E2, E3, E4, E5), na.rm = TRUE),
+         N = mean(c(N1, N2, N3, N4, N5), na.rm = TRUE),
+         O = mean(c(O1, O2, O3, O4, O5), na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  print(bfi_new)
 ```
 
 ```
-## Error in FILL_THIS_IN(., FILL_THIS_IN): could not find function "FILL_THIS_IN"
+## # A tibble: 2,800 x 31
+##    education    A1    A2    A3    A4    A5    C1    C2    C3    C4    C5    E1
+##    <fct>     <int> <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>
+##  1 <NA>          2     4     3     4     4     2     3     3     4     4     3
+##  2 <NA>          2     4     5     2     5     5     4     4     3     4     1
+##  3 <NA>          5     4     5     4     4     4     5     4     2     5     2
+##  4 <NA>          4     4     6     5     5     4     4     3     5     5     5
+##  5 <NA>          2     3     3     4     5     4     4     5     3     2     2
+##  6 3             6     6     5     6     5     6     6     6     1     3     2
+##  7 <NA>          2     5     5     3     5     5     4     4     2     3     4
+##  8 2             4     3     1     5     1     3     2     4     2     4     3
+##  9 1             4     3     6     3     3     6     6     3     4     5     5
+## 10 <NA>          2     5     6     6     5     6     5     6     2     1     2
+## # ... with 2,790 more rows, and 19 more variables: E2 <int>, E3 <int>,
+## #   E4 <int>, E5 <int>, N1 <int>, N2 <int>, N3 <int>, N4 <int>, N5 <int>,
+## #   O1 <int>, O2 <int>, O3 <int>, O4 <int>, O5 <int>, A <dbl>, C <dbl>,
+## #   E <dbl>, N <dbl>, O <dbl>
 ```
 
 4. Use the data from Task 3 to summarize the distributions of Big Five scores 
@@ -616,13 +784,42 @@ FILL_THIS_IN <-
    
 
 ```r
-FILL_THIS_IN %>% 
-  FILL_THIS_IN(FILL_THIS_IN) %>% 
-  FILL_THIS_IN(FILL_THIS_IN)
+bfi_new %>%
+  group_by(education) %>% 
+  summarize_at(.vars = vars(A, C, E, N, O), .funs = funs(mean = mean, sd = sd)) %>%
+  print(bfi_new)
 ```
 
 ```
-## Error in eval(lhs, parent, parent): object 'FILL_THIS_IN' not found
+## Warning: Factor `education` contains implicit NA, consider using
+## `forcats::fct_explicit_na`
+```
+
+```
+## Warning: funs() is soft deprecated as of dplyr 0.8.0
+## Please use a list of either functions or lambdas: 
+## 
+##   # Simple named list: 
+##   list(mean = mean, median = median)
+## 
+##   # Auto named with `tibble::lst()`: 
+##   tibble::lst(mean, median)
+## 
+##   # Using lambdas
+##   list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
+## This warning is displayed once per session.
+```
+
+```
+## # A tibble: 6 x 11
+##   education A_mean C_mean E_mean N_mean O_mean  A_sd  C_sd  E_sd  N_sd  O_sd
+##   <fct>      <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+## 1 1           4.16   3.80   3.74   3.26   3.85 0.780 0.621 0.539  1.21 0.516
+## 2 2           4.28   3.83   3.81   3.23   3.89 0.764 0.573 0.552  1.28 0.567
+## 3 3           4.33   3.78   3.82   3.13   3.89 0.714 0.556 0.556  1.20 0.579
+## 4 4           4.08   3.82   3.77   3.06   3.84 0.696 0.559 0.491  1.18 0.505
+## 5 5           4.16   3.86   3.79   3.06   3.89 0.662 0.532 0.529  1.11 0.492
+## 6 <NA>        3.91   3.80   3.71   3.51   3.74 0.844 0.605 0.571  1.19 0.687
 ```
 
 

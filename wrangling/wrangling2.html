@@ -643,7 +643,7 @@ library(tidyverse)</code></pre>
   ggplot(aes(species, sepal_width)) +
   geom_boxplot() +
   geom_jitter()</code></pre>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAAAw1BMVEUAAAAAADoAAGYAOpAAZrYzMzM6AAA6ADo6AGY6kNtNTU1NTW5NTY5Nbo5NbqtNjqtNjshmAABmAGZmtv9uTU1uTW5uTY5ubo5ubqtuq+SOTU2OTW6OTY6Obk2Obm6OyP+QOgCQkGaQ2/+rbk2rbm6rbo6rjk2ryKur5OSr5P+2ZgC2///Ijk3I5KvI///bkDrb/7bb///kq27k5Kvk/8jk/+Tk///r6+v/tmb/yI7/25D/5Kv//7b//8j//9v//+T///9AQ/jeAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAa2klEQVR4nO2di3rbOJJGMd1xdqJkvMnk0nHSvfa20zvjJOtse3edOIptvf9TDQFedDEFoIBiFUD95/u6pcikqgAc4kJRlFkBUDBGOwEAfBjtBADwYbQTAMCH0U4AAB9GOwEAfBjtBADwYXx/vD8/dY9Xi8Xi2WX34ld5NGKyUnsBFPKPEvRq0Qr6+XTjRflcq2/f6gtQqKDLX35zZt5/uICgWdRegDIFvf/wz3aIv33XDPHu2VGDr8sFgBmz/09XJ90cdPn6YqMXlT+Yqu+Aqi9AkT3o8u11v0iyDPNQ+Vyrb9/qC1CkoHbpvlicQFAGai9AkYKuhtNMN8fXq/s/cJopndoLULKgyzeXtjN9Oizk5XOtvn2rL0Cpgo4in2v17Vt9ASBoIFmFmKzUXgAIGkhWISYrtRcAggaSVYjJSu0FgKCBZBVislJ7ASBoIFmFmKzUXgAIGkhWISYrtRcAggaSVYjJSu0FgKBejo6O5IOyAkHpIesR1F7jV7mhEJQeEoIKAkHpISGoIBCUHrJkQY0xm/+s3k8ImhCyYEGN2TG09vatvgAQdAsIWhoQdAsIWhoQdJsdP6tv3+oLAEEDySrEZKX2AkDQQLIKMVmpvQAQNJCsQkxWai8ABA0kqxCTldoLAEEDySrEZKX2AkDQQLIKMVmpvQAQNJCsQkxWai8ABA0kqxCTldoLAEEDySrEZKX2AkDQQLIKMVmpvQAQNJCsQkxWai8ABA0kqxCTldoLAEEDySrEZKX2AkDQQLIKMVmpvQAQNJCsQkxWai8ABA0kqxCTldoLAEEDySrEZKX2AkDQQLIKMVmpvQBVCQqAIIa8h/zBVH0HVH0BqupB5XOtvn2rLwAEDSSrEJOV2gsAQQPJKsRkpfYCQNBAsgoxWam9ABA0kKxCTFZqLwAEDSSrEJOV2gsAQf3UfvdFCJoQskBBd2/JNABBlYGglgc3tRuAoMpAUAsELRYIaoGgxQJBHZiDlgoE9QNBlYGgfiCoMhDUz5Fn+K8CCEoPWZeg+xdQVQBB6SEhqCAQlB4SggoCQekh6xIUc1BVIKgfrOKVgaB+IKgyENQPBFUGgvqBoMpAUD8QVBkI6geCKgNB/UBQZSCoHwiqDAT1A0GVgaB+IKgyENQPBFUGgvqBoMpAUD8QVBkI6geCKgNB/UBQZSCoHwiqTKmC3p+fusfbd4vj6zoFLeNCZwhKDxkj6NXitPf06nmVghbyVREISg8ZIejyl9+coLe/Xq6Wby4haDIQlB4yLOj9h3+2Q/zy7fXq9v1F8+yowdflTkR6TCcoXyJAHLP/T1cn3Rz05rgX1CJ/MGEOqk2RPWjTb97v9qD1CVoGEJQeMijo1cJysqp6DloIEJQeMjzED6eZ7s9Pal3FFwIEpYeMFdR2nRWfBy0DCEoPGSPoKPK5QlBtIKgfCKoMBPUDQZWBoH4gqDIQ1A8EVQaC+oGgykBQPxBUGQjqB4IqA0H9QFBlIKgfCKoMBPUDQZWBoH4gqDIQ1A8EVebgBQ1c9w5BlTl0QUNfbYOgyhy4oAaCFg4EhaBFA0ExBy2aAxc0+N1gCKrMoQsaIlrQMr4F/xAISg9ZsqC7nsUKWsiNbh4CQekhCxb0gWcQVBkIugUELQ0IukWyoP45qKK8EJQeUlXQgCupc9BQTDVDISg9pKagVFcgqC5HR/In+iCoJHULau8KK27o4QmKOWgUI7V0eIJSXcEnSWKM9R1OUOnDW1dQIhBUjNHBrfVT1lAIKknlgjb5Q1AfEFSOUQ8hqB8IqsxKfokJQSWZgaDiISGoIBCUHjJZUAU0fjwMlIEh7yF/MKEH1aaqHlQ+VwiqDQT1A0GVgaB+8gVVvpAZgtJDHpSg2pfaQ1B6yNkIGqMeBM0DgvrxCRrlHgTNA4L6yRYUc9A8IKiffEGVgaD0kHMRVLtzjAKC0kPORtCBgk2FoPSQEoIeSeLG+sA2k1VnAAhKDykiKPnNM3CC+jeBoIlAUAYg6HRAUA6CfkLQVCBopGGZQNBEIKhLJTxGj+4UvzEETQSCulQSBKXtA0ETgaAuFQhaKhC0zSVphIeg0wNBk8EcVAIIKgMETQSCygBBE+nyl7zaoW8zQ25lQhAI2lG7oG3FiV7Z2LeZIbcyIQgE7YCgZPo2M+RWJgSBoB0QlEzfZobcyoQgELRjHoIeyBx08k/c9wNBE1GouEEXcisTgowJmvSJOxMQNBEIKgMETQSCygBBEzkkQTEHrZCDElQRCJoIBJUBgiYCQWWAoIkcqKDis1EImkiZgt4sFs8u3bOrxfCUUdDc9Xzc3ptbQdBEihR0+eZydfXcPf18uvE6Icikgna7B95jKwgETaRIQS1W0tXq/sPFxmuEIAKCht4EgnJQrKBtD3r7rhniXSdq729EcGjSOWiKoBnhDhrFijOevy1fPXVd5/L1xUYvSjgKpi1XP8IHx/jhOXrQRIrtQW/fD4P7MA8lBJE48PCtTgGKFXRjeVSqoDt4fYWgiRQp6M3xddeD2mf3f7CfZqLqFfkGnreAoIkUKag9+9nMQd3ZJvesgxCEKmj+lU4QdBLKFHQPhCAQtAOCkhlalOwAIYi8oJiDTsJBCepTaOJP5yFoIockKK6orxAIKoN8PXdf1IWgZAZfyK1MCDKm4kEJ6gr7FYImMPiy2YDfH7sa/emTr5XjY4y7SPaTT2gImkghgt6dPYpo5fgYPJ0lY5cLQRMpRNAfL15GtHJ8DAiKOWgyQ/NvtN/dGa+gtnnGfrGQ/guHtF32M1l1BjhAQU3mfZzGBF19888+yYLu840sKIOb7l2yqiwDtcB5DJLR8+8nN8k8EPTHC9PDtUgaO81EHrD9O0S/Wet5To3lUKega8lKEDQaQhAOQUOfPEW+GwSlU5yg3SIpMNATguw5UR9lVNC37gGCTkaOoJPMQUUEZaEXk9AfZx/SOdQpaM4cNJuh3YYW/DLMQf1nQwlBJheU0B9D0AyKEJT/PKiAoMRdJqvOUEVoBWaiEEHjIASZ7jtJCTNZzEHTKUFQodNMqkDQREoQ1PLFqhka6AlBpASN7U8PTFC+OU0hgtazit8mekZ6WIIyzrohaBbzEZR1HTc/Qfsh/om3lQlBIGhfEXGb8Z5pmKGgq2+2TIFzTYQgmIP2FRG3GfOpsNnNQeMgBMEqvq+IuM1Uz9X62J//ZAn3bWbIrUwIAkH7iojcrlA/9+e/dUixZt+3memfNCuk/lRoPYsk4vn64gUtlShBefv/oYnJUhCCTC0o9RNPCJpIIYI2PWjEh/GEIBC0rwitwExEzUEFetC7s/AID0ETmK+gm0w7Bx24O8MclJvDEJSVoYl32vBbjedBY4GgiZQiaDPE//xnqJUJQSBoXxFagZkoRNB6LlhOBIImUoigq9VH9KCTAEHJ9G1mdtrw++OYU02xQrC9Ew9q+ZDv5FsYZf2Q18d6VvFEiupBi/3gfYRSetDu9ou1XW4XDQQdyyJiq0IuFvnxIuCmgxAEgvYV8fVhU0oLOhqt/xpaYN+4i0VY6dvMjLbkj7/vH+UJQSBoXxFjTSnu50g8E2coBJWhLEFlgaAjhASVXsdC0PGX0wXVumBZRtDAtR78+ioKqu3nPpUy56DTMVgw2pJcgubcm9b/1zQmq85QRRQg6Dhxec1V0E36eoi+gHDjr7V/EANB6UgL2lfEVoV462Zeghb7daOovA5V0OAu3bOjfX+ohdqPsOIE9ZEWL0HQNdv1U+po6UFLUOYpfD7xqT8QdIq7220yMgeNBoKmxiV3P9OSI2g001XnXiBoalxOuxg4DEExB42Py2kXA7mCMv+YLBu1rzEgaEemoHdnT+7OXjLewJYLCJoadyLRUskU1Kr58cnqm/9rHykVlTkolyNoYkEgaAuDoF8eMd7Atid3WVOMoKkFqUrQCS/hyZ2DfnR2fmHvQSEoeyaRcVd03wKX8GSRK2gzCV19NH/53RskoZ4gKHsmkXGjfVtvVLKgUaRUFOagOkQLurHVQQqaSTmCJhJVgAlO76YIWvIctP29Tr57M3FxEIJO8QGZZw66/fKU3eYGuYJy/8oHF3MWdLByKkHH2TVSxE+O00wrzt9J4mLGgq611BVUhlkKaoI/Alv+Z/Mxgk40B91DlYKuvtkzTHpD/GgLhTuWCq5uihJ0irj7m1HDz/we1PR4OtHJanO8rWYu6LTd/8w+6oxjsto8TEGnjctpFwNzFHTmc9CJ43LaxQDHedCXgY/ipeeglhmv4ieOu68R2WagtDfKvljk5/958fLu7JE3yHTVuRcImhp3v1Y8hhLfKP80kz3TVNhppq+VCro5Hhy2oOtNIGg5bM2oD1rQjW2yP+q0Q3x9H3UWuUgqXtCAVpHEdaBcgtqf8VrfAfxmsXh26Z7dvlscX/fbTFede/GXi3CaSVDlkgUldqCZNnMKusnyzeXq6rl9dn9+2j2zTFede+ESdLozpiPvGz0HnfCoYRE0eut9m7HNQR9iJW060F8vu2cWYh1xVH+pgpqNj9G9b+wrwJSfM+y5AY0LGX27mtit19vt3z4+9VFB3Spp82POtt9cvr1e3b6/sEdAQ8yxtHX0JA8Q65Ehcjv2ZAgtknwvU9K+lOQ9+ZOyJQvq2YGY/+rhl+a+/PTpS38edPnqqbVydXPcC2qhHcMZ/cN6V7YpHDUXf4Wufc88DKP3pVYEzydJ8SN8u+Fmibb3zT/NZM/Sb5xmarVc96AWWhWVJSiVI28D8QgaPwAwCZqYani3kdrYqRiO86BPts6Dfj5dsc5BKbZuCjrdNM3L0Uglj7VZlqAP324vHIJ6cvUlQCniVgfKKOjd2RN7RejHdohfD+z35ydMq3hafzpse5TRD2cREHRf66XZGhFnWkG9CaQdg7yC2puHPVp97C8WuVosmjmo7TrZzoMmila8oNtKJvancxR051gt/nK7KgUld4hlC7q/OP4EOCYxxQuaOJfUnYOSSZ2RysxBsxLIpHxB01BexZOZrKF1TjPxAUG5A3O2DgMQNAJiHXFwAILGdboQNAJiHXGgJujkk7KeyGkrBI2AWEccaAmautoJs/u+EHSXfhdDDkKsIw5mJ+iDN4agu/S7GHIQYh1xMH9BMQfdpd/FkIMQ64iDSuag8Vunmg9BIyDWEQd1rOIp1iX2zGUKGl+YeQm6/vRI46BwkD4qbAWddOFfpKCEA3NWgm58/l6UoHvbwwyQ6zQWCBoBsY6SqU7QVdeBQtC9QFBmxq5mCl7zc2iCYg6qLOiuc/72OLg5KKXA8xJ0I1mFmI7oC5aFKFBQUu1AUGYgaBAI+lVb0GlHbRIQNAJiHXFQ1CpeExVBAwJiDgpBBzQE5ZzhQFBmZi1opHcQNCJZhZiO8gQ1pG8P+vLfEW+vhXyCknIfdiKHIbdyPhC0g/r96yhB3YNHQ0Y/CbkPe5HjJLRzLhC0YwpB28dwP5ntKQTlJ3h3O3LtJeOCcQrapx8paP5ID0H5YblvZg5DhC4Y4xx0y5vw0cYwFcUclB1tQdchekEZ898IEvEnntLGpw5BYwgNkVOP8esQ7TPhrxYMg/LRV/HfUhmqgFxpkln2ySrEdCTPQZnU3TgG2jmobPG3BBVmqAJypcnnqiKoa5rUVTxb57rzNhA0AvlcNQRt20Zd0B3yRKEP0v0eEDSQrHzIGQpKPEW1CQQNJCsfMk/QqU6RQtAI5HOtbw46FRAUbCEsaLDfzcsnvVtXPFANeQ/5g6nU00yeWk29BXhgP7Ufpc1+B3LnPVQKuRqzc6VTm6Axa6SRLWoTlCAdfXoxVAq59klheJihoGObVCYoRToIOg2ygkbMQbXqYexFCLpOViGmY7o5aNqZ0moFxRx0GiZcvSato4oSdNrLR4Z6IlfSdDntT1YhpmNW50Fz6kE+ZF9kQ64k+VwhaA8EjUA+1xkKmnjOXFoUXCwSmaxCTMdUgqZeTILL7SKQz7VsQVNUg6BBhqoiV5J8rkULmuTafASdbCU/VBW5kqbJx5+sQkzHVILOZg6acYVUgKGmyJU0STqBZBViOiYTNJHiVvEQtE1WIaZjqjloKhA0gknSCSSrENOB86BdPez9C+agLlmFmA4I2tWDfMi+yIZcSfK5QtAeCBqBfK5zEJRnpsooCmlshqCBZBViOtgEZVrr84kSXt1s/h2CBpJViOnY81OIdLPqE3RrAwgaSFYhpmNE0OQT8xCUxFBz5EqSz3UGgtY3B4WglGQVYjr4BOVBUhTMQQnJKsR0cMxBOX3GaaYI5HMtS1AirD0uBI1APlcI2gNBI5DPFYL2QNAI5HOtWlDMQdMYqo9cSfK51i0oJxA0AvlcIWgPBI1APlcI2gNBI5DPFYL2QNAI5HOFoD0QNAL5XCFoDwSNQD7XQn+rk4zJ/7FLrXqQDxkh6PLVYnHqnl0tFotnlwcoKBeugUNXuE32/bN8ihT09v3Favn6wj79fHqgPSgXMYJO9w3efIoU9OZ5r+b9hwsImsWsBJVJM2KI73rR5v/vFt1gb6dB3h3AKG2l+T/0VL3QlAA5z7xiefe9Pz+xD3agX/eiAkfPg6NJISYrUUOkQM+UGmKzAag9feLIECPo7buT9T+GeSg9VjaHIej0JM8iyhR0+WpzbQRBIxlrjjkJSu2GJxN07efN8fXq/g+cZopitD1yfwQ2Z/ftd0oXNDmNtB3DgtqTn83aaPnm0j59Oizk07LM4qAF5VzdZ8xBpU8yRAzxexBMckhWIWYqRQuaCgQNJKsQMxnuOSgEhaCTU8gcNJmsOWhiSAgqSCGr+GQUGgCCSgJB6SEhqCAQlB4SggoCQekhIaggEJQeEoIKAkHpISGoIBCUHhKCCgJB6SEhKDeeM9kQlB4SgjLj+ywQgtJDQlBmIChvSAiaxUMZmQQt4JP3h0DQQLIKMf2M2cgyBy3h2qWHQNBAsgox/RA9gqD0kBA0Bwg6eUgImgVNI8xB6SEhqCBYxdNDQlBBICg95AEIWs5oCUHpIecvaEHrDdZfKWZ7r3ggaCDZpL3mKKhSmSBoINmkvYoSlCkVCFqioKm3vi7Gz69HXGJB0AIF1bw5OxNsgmIOCkGngE9QHSCojzkI6uv5KlAXgnqp3k/vKr6GzhWCBpJViMkKBKWHhKCCQFB6SAgqiHeKUr6fEDSUrEJMVmqfQ0PQQLIKMVmBoPSQyYICOvj1s2QMeQ/5gwk9qDZV9aDyuc5J0ApWRCNA0ECyCjFZGQSt4ZzSCBA0kKxCTFaKEZTjl+ZkgKCSlCJoangIGkhWISYrpcxBEwXVuBgCgkpSyio+TVCVy8kg6ATsbf1SBE3rwCFoMFmFmAns75+KETQJCBpMViFmAnMVFHPQYLIKMROYraBYxYeSVYiZQvlz0EQgaCBZhZisQFB6SAgqCASlh4SggkBQekgIKggEpYeEoIJAUHpICCoIBKWHhKCCQFB6SAgqCASlh4SggkBQekgIKggEpYeEoIJAUHpICCoIBKWHhKCCQFB6SAgqCASlh4SggkBQekgIKggEpYeEoIJAUHpICCoIBKWHhKCCQFB6SAgqCASlh4SggkBQekgIKggEpYeEoIJAUHpICCoIBKWHhKCpJNyAC4LSQ4YFXb5aLE7ds9t3i+NrCNqScgtDCEoPGRT09v3Favn6onl2f366unoOQVsgqEzIoKA3VsnPtgu9/fVytXxzCUEdEFQmZHiI73rRZqx/e909szeK9O5wCDR+aqdwQBjfH+/PT+zDzXEvqEX+YCqrB02h9gIU2oPevnN+bvSgEDSN2gtQpqDLV6edqJiDZlJ7AYoUdPDTjfRYxedQewGKFPRqYTm1XSfOg2ZSewGKFHQf8rlW377VFwCCBpJViMlK7QWAoIFkFWKyUnsBIGggWYWYrNReAAgaSFYhJiu1FwCCBpJViMlK7QWAoIFkFWKyUnsBIGggWYWYrNReAAgaSFYhJiu1FwCCBpJViMlK7QWAoIFkFWKyUnsBIGggWYWYrNReAAgaSFYhJiu1F6AqQRWo/msmtRdAMX+jFzqe2tu3+gJAUD+1t2/1BYCgfmpv3+oLAEEBGMdoJwCAD6OdAAA+jHYCAPgw2gkA4MNoJxBgfcOIWtktQfkl2s5w/S+VzI18SBLlNyeV+ZVoUox2Ag+5WSyeXbq75j67XP9veH19X92ysHewuv9w0Sa7/OW3Z5dtwt2dL55erLo/tf/uN9JOe4u2DP94c+lSa7L8239cNPku3/6XrfN1SQTbwMiEIWDvBGVvtPPZ3W/HVkrz7Ob4unvd3Ve3xE6okdM2cJf2q9O+IE2y9g7ATQnacqxLtL65UCm0ZfjfRkmbms3yqRP0VZ95W5L/E2wDIxKFQncfPfvQNHFTD7ahm3+t76/nmr48rho1T9Zp9wWxDewasyvHukQFHmeuDF3GNsvG2O5f7cM6Zak2MCJRSDTjRzseLhZP++pxh7Z7vTmw26G+OJZv/9+N8F3afUHcEGnvbNWVY12iAgV1ZeiVbOcs24K+be/RJdcGRiQKlW5EX7lW7fqb/vV3p2UO8Xby9nYjbfdaOzDW04O6MgR7UMk2MCJRKNj7Odv/dmds3euusl5fhN9HnqvFyWoj7XXCdubWPDyYg5YnqCtDL+J6DjoI2pbkvwXbwIhEIfF5WMU3A+T9+bCK716/Wiz+9ltpqwuHa7NumftmSNizii9QUFuGXtAmy3/f6UG7kgi2gRGJAipF/xgyyvFBsdyfL9pVqSpGOwEAfBjtBADwYbQTAMCH0U4AAB9GO4ED4vu//a6dQn0Y7QQA8GG0EwDAh9FOYE58f2yMedkM5f9pzM9/rlZ3Z8b89Kl9fNQO8f1L3aYghNFOYEa4Oeb3xy+/P/7p093Zo5X9b/Xl5z/t448XVtzf+5f6TbVTLh+jncCM+P7XT+2jFa9R8JvtKhsz+8XR5kvdpiCE0U5gTnx0I3nbkzYWfjGOJ87K9vX+pX5TEMJoJzAvfrxoZpiDoHYe2rApaPdSv6lOljVhtBOYG3b8dkP8Xz99+8swtPeP/Uv9phoZ1oXRTmBGuJ6ysXC9SGr6y0bJfsHkFkntS/2m2imXj9FOYE58a6aXTRfpTjPZGaY9p2S7zJ3TTPalblMQwmgnMEPQMzJitBOYIRCUEaOdwAyBoIwY7QQA8GG0EwDAh9FOAAAfRjsBAHwY7QQA8GG0EwDAh9FOAAAf/wJRz0NnfNuIHwAAAABJRU5ErkJggg==" /><!-- --></p>
 <ol start="5" style="list-style-type: decimal">
 <li><code>iris</code> expresses all of the measurements in centimeters. Convert them to inches (1 in = 2.54 cm). Store this dataset as a new object.</li>
 </ol>
@@ -824,6 +824,47 @@ library(tidyverse)</code></pre>
 <div id="back-to-guide-again" class="section level1">
 <h1>Back to Guide Again</h1>
 <p>Let’s head back to the guide at the section on <code>summarize()</code>.</p>
+<pre class="r"><code>gapminder %&gt;% 
+  summarize(mu = mean(lifeExp),
+            sigma = sd(lifeExp))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gapminder %&gt;% 
+  group_by(continent, year)</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gapminder %&gt;% 
+  group_by(smallLifeExp = lifeExp &lt; 60)</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gapminder %&gt;% 
+  group_by(continent, year) %&gt;% 
+  summarize(mu = mean(lifeExp),
+            sigma = sd(lifeExp))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gapminder %&gt;% 
+  group_by(year, continent) %&gt;%    # Different order
+  summarize(mu = mean(lifeExp),
+            sigma = sd(lifeExp))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gapminder %&gt;% 
+  group_by(country) %&gt;% 
+  transmute(n = length(country))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gapminder %&gt;% 
+  group_by(country) %&gt;%    # More simple
+  summarize(n = n())</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gapminder %&gt;% 
+  count(country)   # Most simple</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gap_inc &lt;- gapminder %&gt;% 
+  arrange(year) %&gt;% 
+  group_by(country) %&gt;%
+  mutate(gdpPercap_inc = gdpPercap - lag(gdpPercap))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>print(gap_inc)</code></pre>
+<pre><code>## Error in print(gap_inc): object &#39;gap_inc&#39; not found</code></pre>
+<pre class="r"><code>gap_inc %&gt;% 
+  tidyr::drop_na()</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gap_inc&#39; not found</code></pre>
 </div>
 <div id="exercises-for-grouped-data-frames" class="section level1">
 <h1>Exercises for grouped data frames</h1>
@@ -836,14 +877,18 @@ library(tidyverse)</code></pre>
 </ol></li>
 </ol>
 <pre class="r"><code>gapminder %&gt;% 
-  group_by(FILL_THIS_IN) %&gt;% 
-  FILL_THIS_IN(min_life = min(lifeExp))</code></pre>
+  group_by(continent, year) %&gt;% 
+  summarize(min_life = min(lifeExp))</code></pre>
+<pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
+<pre class="r"><code>gapminder %&gt;% 
+  group_by(continent, year) %&gt;% 
+  summarize(min_life = min(lifeExp))</code></pre>
 <pre><code>## Error in eval(lhs, parent, parent): object &#39;gapminder&#39; not found</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Let’s compute the mean Agreeableness score across items for each participant in the <code>psych::bfi</code> dataset. Be sure to handle <code>NA</code>!</li>
 </ol>
 <pre class="r"><code>psych::bfi %&gt;%
-  as_tibble() %&gt;% 
+  as_tibble() %&gt;%    #Trying to set rownames = &quot;id&quot; does not work
   select(A1:A5) %&gt;% 
   rowwise() %&gt;% 
   mutate(A_mean = mean(c(A1, A2, A3, A4, A5), na.rm = TRUE)) %&gt;% 
@@ -863,6 +908,28 @@ library(tidyverse)</code></pre>
 ## 10     2     5     6     6     5    4.8
 ## # ... with 2,790 more rows</code></pre>
 <p>Now compute mean scores for Conscientiousness, as well as <code>sd</code> and <code>min</code> scores for reach person.</p>
+<pre class="r"><code>psych::bfi %&gt;%
+  as_tibble() %&gt;% 
+  select(C1:C5) %&gt;% 
+  rowwise() %&gt;% 
+  mutate(C_mean = mean(c(C1, C2, C3, C4, C5), na.rm = TRUE),
+         C_sd = sd(c(C1, C2, C3, C4, C5), na.rm = TRUE),
+         C_min = min(c(C1, C2, C3, C4, C5), na.rm = TRUE)) %&gt;%
+  ungroup()</code></pre>
+<pre><code>## # A tibble: 2,800 x 8
+##       C1    C2    C3    C4    C5 C_mean  C_sd C_min
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+##  1     2     3     3     4     4    3.2 0.837     2
+##  2     5     4     4     3     4    4   0.707     3
+##  3     4     5     4     2     5    4   1.22      2
+##  4     4     4     3     5     5    4.2 0.837     3
+##  5     4     4     5     3     2    3.6 1.14      2
+##  6     6     6     6     1     3    4.4 2.30      1
+##  7     5     4     4     2     3    3.6 1.14      2
+##  8     3     2     4     2     4    3   1         2
+##  9     6     6     3     4     5    4.8 1.30      3
+## 10     6     5     6     2     1    4   2.35      1
+## # ... with 2,790 more rows</code></pre>
 <p>Some functions are <strong>vectorized</strong>, so you don’t need <code>rowwise()</code>. For example, <code>pmin()</code> computes the “parallel min” across the vectors it receives:</p>
 <pre class="r"><code>psych::bfi %&gt;% 
   as_tibble() %&gt;% 
@@ -916,17 +983,64 @@ library(tidyverse)</code></pre>
 <li>each participant’s educational level (convert it to a categorical variable using <code>factor*()</code>) and the mean score for each of the Big Five scales for each participant. Store this data frame as a new object.</li>
 </ol></li>
 </ol>
-<pre class="r"><code>FILL_THIS_IN &lt;-
-  psych::bfi %&gt;% 
-  FILL_THIS_IN(FILL_THIS_IN)</code></pre>
-<pre><code>## Error in FILL_THIS_IN(., FILL_THIS_IN): could not find function &quot;FILL_THIS_IN&quot;</code></pre>
+<pre class="r"><code>bfi_new &lt;- psych::bfi %&gt;% 
+  mutate(education = factor(education)) %&gt;%
+  select(education, A1:A5, C1:C5, E1:E5, N1:N5, O1:O5) %&gt;%
+  rowwise() %&gt;% 
+  mutate(A = mean(c(A1, A2, A3, A4, A5), na.rm = TRUE),
+         C = mean(c(C1, C2, C3, C4, C5), na.rm = TRUE),
+         E = mean(c(E1, E2, E3, E4, E5), na.rm = TRUE),
+         N = mean(c(N1, N2, N3, N4, N5), na.rm = TRUE),
+         O = mean(c(O1, O2, O3, O4, O5), na.rm = TRUE)) %&gt;% 
+  ungroup() %&gt;% 
+  print(bfi_new)</code></pre>
+<pre><code>## # A tibble: 2,800 x 31
+##    education    A1    A2    A3    A4    A5    C1    C2    C3    C4    C5    E1
+##    &lt;fct&gt;     &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1 &lt;NA&gt;          2     4     3     4     4     2     3     3     4     4     3
+##  2 &lt;NA&gt;          2     4     5     2     5     5     4     4     3     4     1
+##  3 &lt;NA&gt;          5     4     5     4     4     4     5     4     2     5     2
+##  4 &lt;NA&gt;          4     4     6     5     5     4     4     3     5     5     5
+##  5 &lt;NA&gt;          2     3     3     4     5     4     4     5     3     2     2
+##  6 3             6     6     5     6     5     6     6     6     1     3     2
+##  7 &lt;NA&gt;          2     5     5     3     5     5     4     4     2     3     4
+##  8 2             4     3     1     5     1     3     2     4     2     4     3
+##  9 1             4     3     6     3     3     6     6     3     4     5     5
+## 10 &lt;NA&gt;          2     5     6     6     5     6     5     6     2     1     2
+## # ... with 2,790 more rows, and 19 more variables: E2 &lt;int&gt;, E3 &lt;int&gt;,
+## #   E4 &lt;int&gt;, E5 &lt;int&gt;, N1 &lt;int&gt;, N2 &lt;int&gt;, N3 &lt;int&gt;, N4 &lt;int&gt;, N5 &lt;int&gt;,
+## #   O1 &lt;int&gt;, O2 &lt;int&gt;, O3 &lt;int&gt;, O4 &lt;int&gt;, O5 &lt;int&gt;, A &lt;dbl&gt;, C &lt;dbl&gt;,
+## #   E &lt;dbl&gt;, N &lt;dbl&gt;, O &lt;dbl&gt;</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Use the data from Task 3 to summarize the distributions of Big Five scores for each educational level (e.g., report the mean, sd, min, and max for each score in each group). Also report the sample size within each group.</li>
 </ol>
-<pre class="r"><code>FILL_THIS_IN %&gt;% 
-  FILL_THIS_IN(FILL_THIS_IN) %&gt;% 
-  FILL_THIS_IN(FILL_THIS_IN)</code></pre>
-<pre><code>## Error in eval(lhs, parent, parent): object &#39;FILL_THIS_IN&#39; not found</code></pre>
+<pre class="r"><code>bfi_new %&gt;%
+  group_by(education) %&gt;% 
+  summarize_at(.vars = vars(A, C, E, N, O), .funs = funs(mean = mean, sd = sd)) %&gt;%
+  print(bfi_new)</code></pre>
+<pre><code>## Warning: Factor `education` contains implicit NA, consider using
+## `forcats::fct_explicit_na`</code></pre>
+<pre><code>## Warning: funs() is soft deprecated as of dplyr 0.8.0
+## Please use a list of either functions or lambdas: 
+## 
+##   # Simple named list: 
+##   list(mean = mean, median = median)
+## 
+##   # Auto named with `tibble::lst()`: 
+##   tibble::lst(mean, median)
+## 
+##   # Using lambdas
+##   list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
+## This warning is displayed once per session.</code></pre>
+<pre><code>## # A tibble: 6 x 11
+##   education A_mean C_mean E_mean N_mean O_mean  A_sd  C_sd  E_sd  N_sd  O_sd
+##   &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 1           4.16   3.80   3.74   3.26   3.85 0.780 0.621 0.539  1.21 0.516
+## 2 2           4.28   3.83   3.81   3.23   3.89 0.764 0.573 0.552  1.28 0.567
+## 3 3           4.33   3.78   3.82   3.13   3.89 0.714 0.556 0.556  1.20 0.579
+## 4 4           4.08   3.82   3.77   3.06   3.84 0.696 0.559 0.491  1.18 0.505
+## 5 5           4.16   3.86   3.79   3.06   3.89 0.662 0.532 0.529  1.11 0.492
+## 6 &lt;NA&gt;        3.91   3.80   3.71   3.51   3.74 0.844 0.605 0.571  1.19 0.687</code></pre>
 </div>
 <div id="bonus-exercises" class="section level1">
 <h1>Bonus Exercises</h1>
