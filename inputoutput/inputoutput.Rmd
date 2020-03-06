@@ -7,7 +7,6 @@ output:
 ---
 
 ```{r, warning = FALSE, message = FALSE}
-library(cairo)
 library(gapminder)
 library(ggthemes)
 library(googlesheets4)
@@ -18,6 +17,7 @@ library(rio)
 library(readxl)
 library(svglite)
 library(tidyverse)
+
 knitr::opts_chunk$set(fig.width=4, fig.height=3, warning = FALSE, fig.align = "center")
 ```
 
@@ -118,7 +118,7 @@ print(clevel_plot)
 
 dir.create(here::here("inputoutput", "figures"))
 ggsave(here::here("inputoutput", "figures", "clevel_extraversion.svg"), clevel_plot)
-ggsave(here::here("inputoutput", "figures", "clevel_extraversion.eps"), clevel_plot)
+ggsave(here::here("inputoutput", "figures", "clevel_extraversion.eps"), clevel_plot, fonts = "sans")
 ggsave(here::here("inputoutput", "figures", "clevel_extraversion.pdf"), clevel_plot)
 ggsave(here::here("inputoutput", "figures", "clevel_extraversion.tiff"), clevel_plot)
 ggsave(here::here("inputoutput", "figures", "clevel_extraversion.png"), clevel_plot)
