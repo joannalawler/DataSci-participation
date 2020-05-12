@@ -1,0 +1,128 @@
+---
+title: "Inputting/Outputting Files"
+author: "Joanna Lawler"
+output: 
+  html_document:
+    keep_md: TRUE
+    theme: cerulean
+    toc: TRUE
+---
+
+```{r, warning = FALSE, message = FALSE}
+library(gapminder)
+library(ggthemes)
+library(googlesheets4)
+library(haven)
+library(here)
+library(readr)
+library(rio)
+library(readxl)
+library(svglite)
+library(tidyverse)
+
+knitr::opts_chunk$set(fig.width=4, fig.height=3, warning = FALSE, fig.align = "center")
+```
+
+<!-- The following chunk allows errors when knitting -->
+
+```{r allow errors, echo = FALSE}
+knitr::opts_chunk$set(error = TRUE)
+```
+
+# 8.3 Writing Data to Disk
+
+```{r}
+(gap_asia_2007 <- gapminder %>% filter(year == 2007, continent == "Asia"))
+write_csv(gap_asia_2007, "exported_file.csv")
+```
+
+# 8.5 here::here()
+
+```{r}
+# After first creating a subfolder called "s008_data" within a folder called "data", the code below will ensure that gap_asia_2007 will be saved in that subfolder
+
+write_csv(gap_asia_2007, here::here("data", "s008_data", "exported_file.csv"))
+```
+
+# 8.6 Reading Data From Disk
+
+```{r}
+read_csv(here::here("data", "s008_data", "exported_file.csv"))
+```
+
+# 8.7.1 Import a CSV File From the Internet
+
+```{r}
+# Two steps better than one
+url <- "http://gattonweb.uky.edu/sheather/book/docs/datasets/magazines.csv"
+read_csv(url)
+```
+
+# 8.7.2 Import an Excel File (.xls or .xlsx) From the Internet
+
+```{r}
+dir.create(here::here("data", "s008_data"), recursive = TRUE)
+
+# mode = "wb" is very important on Windows
+
+xls_url <- "http://gattonweb.uky.edu/sheather/book/docs/datasets/GreatestGivers.xls"
+download.file(xls_url, here::here("data", "s008_data", "some_file.xls"), mode = "wb")
+
+# Extract and import
+
+file_name <- basename(xls_url)
+download.file(xls_url, here::here("data", "s008_data", file_name), mode = "wb")
+read_excel(here::here("data", "s008_data", file_name))
+```
+
+# 8.8 Read in a Sample SPSS File
+
+```{r}
+(clevel <- haven::read_spss(here::here("inputoutput", "clevel.sav")))
+
+clevel_cleaned <-
+  clevel %>% 
+  mutate(language = as_factor(language),
+         gender = as_factor(gender),
+         isClevel = factor(isClevel, 
+                           levels = c(0, 1), 
+                           labels = c("No", "Yes"))
+  ) %>% 
+  print()
+```
+
+# 8.8.1 Saving Data Frames
+
+```{r}
+write_csv(clevel_cleaned, here::here("inputoutput", "clevel_cleaned.csv"))
+```
+
+# 8.8.2 Saving Plots
+
+```{r echo = FALSE, fig.width = 7.5, fig.height = 5}
+clevel_plot <-
+  clevel_cleaned %>% 
+  mutate(isClevel = recode(isClevel, 
+                           No = "Below C-level", 
+                           Yes = "C-level"),
+         gender = recode(gender,
+                         Female = "Women",
+                         Male = "Men")) %>% 
+  ggplot(aes(paste(isClevel, gender, sep = "\n"), Extraversion, color = gender)) +
+  geom_boxplot() +
+  geom_jitter(height = .2) +
+  scale_color_manual(values = c("#1b9e77", "#7570b3")) +
+  ggtitle("Extraversion Stan Scores") +
+  scale_y_continuous(breaks = 1:9) +
+  ggthemes::theme_fivethirtyeight()
+
+print(clevel_plot)
+
+dir.create(here::here("inputoutput", "figures"))
+ggsave(here::here("inputoutput", "figures", "clevel_extraversion.svg"), clevel_plot)
+ggsave(here::here("inputoutput", "figures", "clevel_extraversion.eps"), clevel_plot, fonts = "sans")
+ggsave(here::here("inputoutput", "figures", "clevel_extraversion.pdf"), clevel_plot)
+ggsave(here::here("inputoutput", "figures", "clevel_extraversion.tiff"), clevel_plot)
+ggsave(here::here("inputoutput", "figures", "clevel_extraversion.png"), clevel_plot)
+```
+

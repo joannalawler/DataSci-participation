@@ -1,0 +1,49 @@
+---
+title: "Exploring Markdown"
+author: "Joanna Lawler"
+output:
+  html_document:
+    keep_md: TRUE
+    theme: cerulean
+    toc: TRUE
+---
+
+## 1.14.1 Activity: Getting Set Up With R Packages
+
+```{r}
+# install.packages('rmarkdown')
+# install.packages('gapminder')
+# install.packages('tibble')
+# install.packages('DT')
+```
+
+## 1.14.2 Activity: Exploring Code Chunks
+
+```{r}
+library(gapminder)
+library(tibble)
+library(DT)
+```
+
+## 1.14.3 Activity: Exploring the YAML Header
+## 1.14.4 Activity: Exploring Chunk Options
+
+```{r gapminder view, echo = FALSE}
+gapminder
+```
+
+mtcars is a dataset describing the features of automobiles from an old magazine. It has 7 variables.
+
+```{r}
+mtcars
+
+# these are two equivalent ways to pull a variable out of a dataframe
+
+mtcars[["mpg"]]
+mtcars$mpg
+
+mtcars$cyl
+
+mean(mtcars$mpg)
+unique(mtcars$cyl, incomparables = FALSE)
+```
